@@ -1,0 +1,42 @@
+filename oapl_ii
+
+0123456789
+abcdefghijlkm
+nopqrstuvwxyz~!@
+#$%^&*()_+{}|[]\;:?/
+
+char	*get_next_line(int fd)
+{
+	
+
+	return ()
+}
+
+
+gcc get_next_line.c -d BUFFER_SIZE=5
+
+int main(void)
+{
+	int	fd;
+	char	*dog;
+
+	fd = open("opal_ii"); //file descriptor
+
+	//first line
+	dog = get_next_line(fd);
+	printf("dog = %s\n", dog);
+	
+	//cleanup
+	free(dog);
+	dog = null;
+
+	//second line
+	dog = get_next_line(fd);
+	printf("dog = %s\n", dog);
+
+	//cleanup
+	free(dog)
+	dog = null;
+
+	close(fd);
+}
