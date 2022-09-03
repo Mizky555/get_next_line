@@ -9,6 +9,7 @@ char get_next_line(int fd)
     size_t len;
 
     len = read(fd ,*buf ,5);
+    *buf = malloc(len * (size of(char)));
     printf("len = %zu,*buf = %s",len, *buf);
     return(0);
 
