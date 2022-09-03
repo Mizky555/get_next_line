@@ -9,7 +9,7 @@ char get_next_line(int fd)
     size_t len;
 
     len = read(fd ,*buf ,5);
-    printf("len = %zu,*buf = %s",len, buf);
+    printf("len = %zu,*buf = %s",len, *buf);
     return(0);
 
 }
