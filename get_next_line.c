@@ -7,20 +7,23 @@
 char get_next_line(int fd)
 {
     char *buf;
+	char *str;
     size_t len_buf;
 
+	str = NULL;
     buf = (char *)malloc(BUFFER_SIZE * (sizeof(char)) + 1);
     while (1)
     {
         len_buf = read(fd, buf, BUFFER_SIZE);
         int i;
-        char *srtjoy;
-        i = 0;
+
+		i = 0;
+		str = ft_strjoin(str, buf)
         while (i < len_buf)
         {
             if (buf[i] == "\n")
             {
-                return (srtjoy);
+                return (str);
             }
             i++;
         }
