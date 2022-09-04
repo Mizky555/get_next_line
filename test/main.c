@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include "main.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -10,7 +10,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char *ft_strjoin(char *s1, char *s2)
 {
 	char *str;
 	size_t i;
@@ -41,19 +41,29 @@ char *ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-int	ft_strlcpy(char *dst, const char *src, size_t size)
+char *get_next_line(int fd)
 {
-	size_t	srcsize;
+	static box b;
+	char *buf;
+	int len_buf;
 
-	srcsize = ft_strlen(src);
-	if (size <= 0)
-		return (srcsize);
-	else if (srcsize + 1 < size)
-		ft_memcpy(dst, src, srcsize + 1);
-	else
+	printf("Hello\n");
+	buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+	len_buf = read(fd,buf,BUFFER_SIZE);
+	if (b.str == 0)
 	{
-		ft_memcpy(dst, src, size - 1);
-		dst[size - 1] = '\0';
+		b.str = malloc(sizeof(char) * 3);
 	}
-	return (srcsize);
+	b.str = ft_strjoin(b.str,buf);
+
+	return(b.str);
+}
+
+int main()
+{
+	int fd;
+	fd = open("opal_i",O_RDONLY);
+	printf("get_next_linr = %s",get_next_line(fd));
+
+	close(fd);
 }

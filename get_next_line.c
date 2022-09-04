@@ -4,6 +4,16 @@
 #include <stdlib.h>
 #include "get_next_line.h"
 
+size_t len_newline(const char *buf)
+{
+	size_t len;
+
+	len = 0;
+	while(buf[len] != '\n')
+		len++;
+	return (len);
+}
+
 char get_next_line(int fd)
 {
     char *buf;
@@ -18,12 +28,12 @@ char get_next_line(int fd)
         int i;
 
 		i = 0;
-		str = ft_strjoin(str, buf)
+		str = ft_strjoin(str, buf);
         while (i < len_buf)
         {
-            if (buf[i] == "\n")
+            if (buf[i] == '\n')
             {
-                return (str);
+                 (str + len_buf);
             }
             i++;
         }
