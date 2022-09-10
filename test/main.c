@@ -1,5 +1,31 @@
 #include "main.h"
-//Helllo opal
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	if (dst == src)
+		return (0);
+	if (dst > src)
+	{
+		while (len > 0)
+		{
+			((char *)dst)[len - 1] = ((char *)src)[len - 1];
+			len--;
+		}
+	}
+	else
+	{
+		while (i < len)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
+}
+
 size_t	ft_strlen(const char *s)
 {
 	int	i;
