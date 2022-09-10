@@ -1,5 +1,5 @@
 #include "main.h"
-
+//Helllo opal
 size_t	ft_strlen(const char *s)
 {
 	int	i;
