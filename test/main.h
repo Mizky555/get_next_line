@@ -4,6 +4,10 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdlib.h>
 
 typedef struct boxbox
 {

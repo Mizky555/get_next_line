@@ -49,7 +49,7 @@ char *get_next_line(int fd)
 
 	buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	len_buf = read(fd,buf,BUFFER_SIZE);
-	if (b.str == 0)
+	if (b.str == NULL)
 	{
 		b.str = malloc(sizeof(char) * 3);
 	}
