@@ -62,7 +62,7 @@ int main()
 {
 	int fd;
 	fd = open("opal_i",O_RDONLY);
-	printf("get_next_linr = %s",get_next_line(fd));
+	printf("get_next_linr = \n%s",get_next_line(fd));
 
 	close(fd);
 }

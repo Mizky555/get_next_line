@@ -47,7 +47,7 @@ char *get_next_line(int fd)
 	static box b;
 	char *buf;
 	int len_buf;
-  char *stray;
+    char *stray;
 
 	buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
   if (b.str == 0)
@@ -82,6 +82,7 @@ int main()
 {
 	int fd;
 	fd = open("opal_i",O_RDONLY);
+	printf("get_next_linr = %s",get_next_line(fd));
 	printf("get_next_linr = %s",get_next_line(fd));
 
 	close(fd);
