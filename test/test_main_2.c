@@ -9,7 +9,7 @@ char    *get_next_line(int fd)
     buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
     len_buf = read(fd,buf,BUFFER_SIZE);
     b.str = buf;
-    return()
+    return(b.str);
 }
 
 int main()
