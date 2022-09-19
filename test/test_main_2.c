@@ -1,11 +1,14 @@
+#include "main.h"
+
 char    *get_next_line(int fd)
 {
     char    *buf;
     int len_buf;
-
+    static  box b;
 
     buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
     len_buf = read(fd,buf,BUFFER_SIZE);
+    b.str = buf;
     return()
 }
 
