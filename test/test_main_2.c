@@ -49,13 +49,13 @@ char    *get_next_line(int fd)
         len_buf = read(fd, buf ,BUFFER_SIZE);
         while (BUFFER_SIZE > i_buf)
         {
-            if (buf[i] == '\n' || buf[i] == '\0')
+            if (buf[i_buf] == '\n' || buf[i_buf] == '\0')
             {
                 b.str = buf;
                 return (str);
             }
-            str = ft_strjoin(str, buf[i]);
-            i++;
+            str = ft_strjoin(str, buf[i_buf]);
+            i_buf++;
         }
     }
 }
