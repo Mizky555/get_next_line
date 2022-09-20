@@ -59,7 +59,7 @@ char *get_next_line(int fd)
       int len_to_newline;
       i_stray = 0;
       len_to_newline = 0;
-	  BUFFER_SIZE -= 1;
+	  BUFFER_SIZE = BUFFER_SIZE - 1;
       len_buf = read(fd,buf,BUFFER_SIZE);
       b.str = ft_strjoin(b.str,buf);
       while (b.str[len_to_newline] != '\n' || len_to_newline > len_buf)
