@@ -48,7 +48,6 @@ char    *get_next_line(int fd)
     static  box b;
     char    *str;
 
-    buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
     b.str = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
     while (1)
     {
@@ -67,7 +66,7 @@ char    *get_next_line(int fd)
             str = ft_strjoin(str, buf[i_buf]);
             i_buf++;
         }
-		free(buf)
+		free(buf);
     }
 }
 
