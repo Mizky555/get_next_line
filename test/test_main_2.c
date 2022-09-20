@@ -10,6 +10,11 @@ char    *get_next_line(int fd)
     len_buf = read(fd,buf,BUFFER_SIZE);
     b.str = buf;
     return(b.str);
+
+    while (1)
+    {
+        while (BUFFER_SIZE>)
+    }
 }
 
 int main()
