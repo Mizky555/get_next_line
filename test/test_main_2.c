@@ -61,6 +61,9 @@ char    *get_next_line(int fd)
             if (buf[i_buf] == '\n' || buf[i_buf] == '\0')
             {
                 b.str = buf;
+				str = ft_strjoin(str, buf[i_buf]);
+				if (buf[i_buf] != '\0')
+					str = ft_strjoin(str, '\0');
                 return (str);
             }
             str = ft_strjoin(str, buf[i_buf]);
