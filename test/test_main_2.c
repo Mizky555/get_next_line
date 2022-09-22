@@ -19,20 +19,16 @@ char *ft_strjoin_cha(char *s1, char c)
 	int j2;
 
 	i = 0;
-	j1 = 0;
-	j2 = 0;
-	len = ft_strlen(s1);
+	len = ft_strlen(s1) + 1;
 	str = malloc(sizeof(char) * len + 1);
 
-	while (i < len)
+	while (s1[i] != '\0')
 	{
-		if (i < ft_strlen(s1))
-			str[i] = s1[j1++];
-		else if (i < len)
-			str[i] = c[j2++];
+		str[i] = s1[i]
 		i++;
 	}
-	str[i] = '\0';
+	str[i] = c;
+	str[i + 1] = '\0';
 	if (s1)
 	{
 		free(s1);
@@ -61,14 +57,13 @@ char    *get_next_line(int fd)
             if (buf[i_buf] == '\n' || buf[i_buf] == '\0')
             {
                 b.str = buf;
-				//str = ft_strjoin(str, buf[i_buf]);
-				str = malloc(ft_strlen(str) + 2);
+				str = ft_strjoin_cha(str, buf[i_buf]);
 				printf("b join = %s\n",str);
 				if (buf[i_buf] != '\0')
-					str = ft_strjoin(str, '\0');
+					str = ft_strjoin_cha(str, '\0');
                 return (str);
             }
-            str = ft_strjoin(str, buf[i_buf]);
+            str = ft_strjoin_cha(str, buf[i_buf]);
 			printf("back join = %s\n",str);
             i_buf++;
         }
