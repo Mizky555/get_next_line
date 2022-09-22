@@ -57,7 +57,7 @@ char    *get_next_line(int fd)
 		printf("BUFFER_SIZE = %d\n",BUFFER_SIZE);
 		printf("i_buf = %d\n",i_buf);
 		int buf_int = BUFFER_SIZE;
-        while (10 > i_buf)
+        while (10 > 9)
         {
 			printf("while i_buf = %d",i_buf);
             if (buf[i_buf] == '\n' || buf[i_buf] == '\0')
@@ -73,6 +73,7 @@ char    *get_next_line(int fd)
             str = ft_strjoin_cha(str, buf[i_buf]);
 			printf("back join = %s\n",str);
             i_buf++;
+			return(0);
         }
 		return(0);
 		free(buf);
