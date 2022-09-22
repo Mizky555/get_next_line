@@ -57,6 +57,7 @@ char    *get_next_line(int fd)
 		printf("len_buf  read   = %d\n", len_buf);
         while (BUFFER_SIZE > i_buf)
         {
+			printf("while i_buf = %d",i_buf);
             if (buf[i_buf] == '\n' || buf[i_buf] == '\0')
             {
                 b.str = buf;
