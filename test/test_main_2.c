@@ -10,7 +10,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char *ft_strjoin(char *s1, char *s2)
+char *ft_strjoin_cha(char *s1, char c)
 {
 	char *str;
 	size_t i;
@@ -21,7 +21,7 @@ char *ft_strjoin(char *s1, char *s2)
 	i = 0;
 	j1 = 0;
 	j2 = 0;
-	len = ft_strlen(s1) + ft_strlen(s2);
+	len = ft_strlen(s1);
 	str = malloc(sizeof(char) * len + 1);
 
 	while (i < len)
@@ -29,7 +29,7 @@ char *ft_strjoin(char *s1, char *s2)
 		if (i < ft_strlen(s1))
 			str[i] = s1[j1++];
 		else if (i < len)
-			str[i] = s2[j2++];
+			str[i] = c[j2++];
 		i++;
 	}
 	str[i] = '\0';
@@ -61,7 +61,8 @@ char    *get_next_line(int fd)
             if (buf[i_buf] == '\n' || buf[i_buf] == '\0')
             {
                 b.str = buf;
-				str = ft_strjoin(str, buf[i_buf]);
+				//str = ft_strjoin(str, buf[i_buf]);
+				str = malloc(ft_strlen(str) + 2);
 				printf("b join = %s\n",str);
 				if (buf[i_buf] != '\0')
 					str = ft_strjoin(str, '\0');
