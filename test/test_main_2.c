@@ -66,7 +66,7 @@ char    *get_next_line(int fd)
             str = ft_strjoin_cha(str, buf[i_buf]);
             i_buf++;
         }
-        
+        free(buf);
     }
 }
 
