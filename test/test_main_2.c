@@ -55,6 +55,8 @@ char    *get_next_line(int fd)
 		printf("malloc = %d\n",i_buf);
         len_buf = read(fd, buf ,BUFFER_SIZE);
 		printf("len_buf  read   = %d\n", len_buf);
+		printf("BUFFER_SIZE = %d\n",BUFFER_SIZE);
+		printf("i_buf = %d\n",i_buf);
         while (BUFFER_SIZE > i_buf)
         {
 			printf("while i_buf = %d",i_buf);
