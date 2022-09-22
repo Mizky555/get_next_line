@@ -24,7 +24,7 @@ char *ft_strjoin_cha(char *s1, char c)
 
 	while (s1[i] != '\0')
 	{
-		str[i] = s1[i]
+		str[i] = s1[i];
 		i++;
 	}
 	str[i] = c;
