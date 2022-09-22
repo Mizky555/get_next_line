@@ -56,7 +56,7 @@ char    *get_next_line(int fd)
 		printf("BUFFER_SIZE = %d\n",BUFFER_SIZE);
 		printf("i_buf = %d\n",i_buf);
 		int buf_int = BUFFER_SIZE;
-        while (buf_int > i_buf)
+        while (10 > i_buf)
         {
 			printf("while i_buf = %d",i_buf);
             if (buf[i_buf] == '\n' || buf[i_buf] == '\0')
