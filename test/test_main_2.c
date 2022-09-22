@@ -62,11 +62,13 @@ char    *get_next_line(int fd)
             {
                 b.str = buf;
 				str = ft_strjoin(str, buf[i_buf]);
+				printf("b join = %s\n",str);
 				if (buf[i_buf] != '\0')
 					str = ft_strjoin(str, '\0');
                 return (str);
             }
             str = ft_strjoin(str, buf[i_buf]);
+			printf("back join = %s\n",str);
             i_buf++;
         }
 		free(buf);
