@@ -43,11 +43,12 @@ char    *get_next_line(int fd)
     int len_buf;
     static  box b;
     char    *str;
+	int i_buf;
 
     b.str = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
     while (1)
     {
-        int i_buf;
+        
 
         i_buf = 0;
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
