@@ -51,6 +51,7 @@ char    *get_next_line(int fd)
 
         i_buf = 0;
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+		printf("back join = %d\n",i_buf);
         len_buf = read(fd, buf ,BUFFER_SIZE);
         while (BUFFER_SIZE > i_buf)
         {
