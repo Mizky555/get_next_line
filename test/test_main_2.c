@@ -50,14 +50,13 @@ char    *get_next_line(int fd)
         int i_buf;
 
         i_buf = 0;
-		printf("i_buf = %d\n",i_buf);
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
-		printf("malloc = %d\n",i_buf);
         len_buf = read(fd, buf ,BUFFER_SIZE);
 		printf("len_buf  read   = %d\n", len_buf);
 		printf("BUFFER_SIZE = %d\n",BUFFER_SIZE);
 		printf("i_buf = %d\n",i_buf);
-        while (BUFFER_SIZE > i_buf)
+		int buf_int = BUFFER_SIZE;
+        while (buf_int > i_buf)
         {
 			printf("while i_buf = %d",i_buf);
             if (buf[i_buf] == '\n' || buf[i_buf] == '\0')
@@ -73,6 +72,7 @@ char    *get_next_line(int fd)
 			printf("back join = %s\n",str);
             i_buf++;
         }
+		return(0);
 		free(buf);
     }
 }
