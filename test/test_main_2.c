@@ -50,8 +50,9 @@ char    *get_next_line(int fd)
         int i_buf;
 
         i_buf = 0;
+		rintf("i_buf = %d\n",i_buf);
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
-		printf("back join = %d\n",i_buf);
+		printf("malloc = %d\n",i_buf);
         len_buf = read(fd, buf ,BUFFER_SIZE);
         while (BUFFER_SIZE > i_buf)
         {
