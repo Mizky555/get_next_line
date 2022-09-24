@@ -95,13 +95,14 @@ char *get_next_line(int fd)
 		return (NULL);
 	while (1)
 	{
-		len_buf = read(fd, buf, BUFFER_SIZE);
 		if (len_buf == 0)
 		{
 			buf = b.str;
 			printf("Sssssssssssssssssssssssssssssssssssssss\n");
 			len_buf = ft_strlen(buf);
 		}
+		else
+			len_buf = read(fd, buf, BUFFER_SIZE);
 		if (len_newline(buf, len_buf) != len_buf)
 		{
 			str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
