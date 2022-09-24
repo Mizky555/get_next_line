@@ -100,6 +100,7 @@ char *get_next_line(int fd)
 			buf = b.str;
 			printf("Sssssssssssssssssssssssssssssssssssssss\n");
 			len_buf = ft_strlen(buf);
+			break;
 		}
 		else
 			len_buf = read(fd, buf, BUFFER_SIZE);
