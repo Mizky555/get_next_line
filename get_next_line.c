@@ -4,6 +4,16 @@
 #include <stdlib.h>
 #include "get_next_line.h"
 
+size_t    ft_strlen(const char *s)
+{
+    size_t    i;
+
+    i = 0;
+    while (s[i] != '\0')
+        i++;
+    return (i);
+}
+
 char	*ft_strchr_l(const char *s, int c)
 {
 	size_t	i;
@@ -20,15 +30,7 @@ char	*ft_strchr_l(const char *s, int c)
 	return (i);
 }
 
-size_t    ft_strlen(const char *s)
-{
-    size_t    i;
 
-    i = 0;
-    while (s[i] != '\0')
-        i++;
-    return (i);
-}
 
 // int	len_newline(char *buf,int len_buf){
 //     int i;
