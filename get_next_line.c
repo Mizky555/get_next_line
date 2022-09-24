@@ -4,6 +4,39 @@
 #include <stdlib.h>
 #include "get_next_line.h"
 
+char	*ft_strchr_l(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+		{
+			return ((char *)&s[i]);
+		}
+		i++;
+	}
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (0);
+}
+
+char	*ft_strchr_r(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i--;
+	}
+	return (0);
+}
 
 size_t    ft_strlen(const char *s)
 {
@@ -15,6 +48,18 @@ size_t    ft_strlen(const char *s)
     return (i);
 }
 
+int	len_newline(char *buf,int len_buf){
+    int i;
+
+    i = 0;
+    while(i <= len_buf)
+    {
+        if (buf[i] == '\n')
+            return (i);
+        i++;
+    }
+    return (len_buf);
+}
 char	*ft_strjoin(char const *s1, char const *s2, size_t len_s2)
 {
 	char	*str;
@@ -44,12 +89,21 @@ char	*ft_strjoin(char const *s1, char const *s2, size_t len_s2)
 	return (str);
 }
 
+char get_next_line(int fd)
+{
+    char *buf;
+    int len_buf;
 
+    buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
+    len_buf = read(fd, buf, BUFFER_SIZE);
+    len_newline(buf, len_buf);
+   
+}
 
 int main()
 {
     int	fd;
-    printf("strjoin opal,hello,3 = %s\n",ft_strjoin("opal","hello",3));
+    printf("lennewline = %d\n",len_newline("opal\n123",8));
     //fd = open("opal_i", O_RDONLY);
     //printf("get_next_line = \n",get_next_line(fd));
 }
