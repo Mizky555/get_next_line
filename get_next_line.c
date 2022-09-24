@@ -119,8 +119,8 @@ char *get_next_line(int fd)
 		// 	break;
 		// }
 	}
-	if (str == NULL)
-		str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
+	// if (str == NULL)
+	// 	str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
 	b.str = ft_strchr_l(buf);
 	printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
@@ -132,6 +132,6 @@ int main()
 		//printf("ft_strchr_l = %s\n",ft_strchr_l("opal\n123",'a'));
     	fd = open("opal", O_RDONLY);
     	printf("get_next_line = %s\n",get_next_line(fd));
-		printf("get_next_line = %s\n",get_next_line(fd));
+		// printf("get_next_line = %s\n",get_next_line(fd));
 		// printf("get_next_line = %s\n",get_next_line(fd));
 }
