@@ -56,7 +56,7 @@ char get_next_line(int fd)
 int main()
 {
     int	fd;
-    printf("strjoin opal,hello,3",ft_strjoin("opal","hello",3));
+    printf("strjoin opal,hello,3 = %s\n",ft_strjoin("opal","hello",3));
     //fd = open("opal_i", O_RDONLY);
     //printf("get_next_line = \n",get_next_line(fd));
 }
