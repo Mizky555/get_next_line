@@ -123,4 +123,5 @@ int main()
 		//printf("ft_strchr_l = %s\n",ft_strchr_l("opal\n123",'a'));
     	fd = open("opal", O_RDONLY);
     	printf("get_next_line = %s\n",get_next_line(fd));
+		printf("get_next_line = %s\n",get_next_line(fd));
 }
