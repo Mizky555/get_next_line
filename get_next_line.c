@@ -27,7 +27,7 @@ char	*ft_strchr_l(const char *s)
 		}
 		i++;
 	}
-	return ((char *)&s[i]);
+	return ((char *)&s[i + 1]);
 }
 
 
