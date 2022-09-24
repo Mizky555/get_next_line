@@ -85,7 +85,7 @@ char *get_next_line(int fd)
 		return (NULL);
 	printf("fd = %d\n",fd);
 	len_buf = read(fd, buf, BUFFER_SIZE);
-	printf("len_buf = %d",len_buf);
+	printf("len_buf = %d\n",len_buf);
     str = ft_strjoin(str,buf,len_newline(buf, len_buf));
 	printf("str strjoin(str,buf,num) = %s\n",str);
 	b.str = ft_strchr_l(buf);
