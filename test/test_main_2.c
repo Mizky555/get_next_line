@@ -58,10 +58,14 @@ char    *get_next_line(int fd)
             // }
             // str = ft_strjoin_cha(str, buf[i_buf]);
             // i_buf++;
+            printf("i_buf = %d\n",i_buf);
             if (buf[i_buf] == '\n' || buf[i_buf] == '\0')
             {
                 b.str = buf;
+                printf("buf = %s\n",buf);
+                printf("b.str = %d\n",b.str);
                 str = ft_strjoin_cha(str, buf[i_buf]);
+                printf("str = %s\n",str);
                 if (buf[i_buf] != '\0')
                     str = ft_strjoin_cha(str, '\0');
                 b.len = i_buf + 1;
