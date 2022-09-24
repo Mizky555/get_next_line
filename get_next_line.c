@@ -16,7 +16,7 @@ int   ft_strlen(const char *s)
 
 char	*ft_strchr_l(const char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i <= ft_strlen(s))
