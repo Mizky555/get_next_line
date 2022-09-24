@@ -104,6 +104,7 @@ int main()
 {
     int	fd;
 		printf("ft_strchr_l = %s\n",ft_strchr_l("opal\n123",'a'));
+		printf("ft_strchr_r = %s\n",ft_strchr_r("opal\n123",'a'));
     //fd = open("opal_i", O_RDONLY);
     //printf("get_next_line = \n",get_next_line(fd));
 }
