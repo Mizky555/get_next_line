@@ -63,7 +63,7 @@ char    *get_next_line(int fd)
             {
                 b.str = buf;
                 printf("buf = %s\n",buf);
-                printf("b.str = %d\n",b.str);
+                printf("b.str = %s\n",b.str);
                 str = ft_strjoin_cha(str, buf[i_buf]);
                 printf("str = %s\n",str);
                 if (buf[i_buf] != '\0')
