@@ -94,7 +94,7 @@ char *get_next_line(int fd)
     if (buf == NULL)
 		return (NULL);
 		len_buf = read(fd, buf, BUFFER_SIZE);
-		if (buf == NULL)
+		if (len_buf == 0)
 		{
 			buf = b.str;
 			printf("Sssssssssssssss");
