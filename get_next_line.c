@@ -27,7 +27,7 @@ char	*ft_strchr_l(const char *s, int c)
 		}
 		i++;
 	}
-	return (i);
+	return (0);
 }
 
 
