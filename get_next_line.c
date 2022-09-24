@@ -94,7 +94,8 @@ char *get_next_line(int fd)
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     if (buf == NULL)
 		return (NULL);
-
+	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str))
+		str = b.str;
 	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str))
 	{
 		len_buf = read(fd, buf, BUFFER_SIZE);
@@ -103,25 +104,6 @@ char *get_next_line(int fd)
 		str = ft_strjoin(str,buf,len_newline(buf, len_buf));
 		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ให้ต่อแล้วเบรก
 			break;
-
-
-		// if (len_buf == 0)
-		// {
-		// 	buf = b.str;
-		// 	printf("Sssssssssssssssssssssssssssssssssssssss\n");
-		// 	len_buf = ft_strlen(buf);
-		// 	break;
-		// }
-		// else
-		// 	len_buf = read(fd, buf, BUFFER_SIZE);
-		// if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ให้ต่อแล้วเบรก
-		// {
-		// 	str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
-		// 	printf("buf = %s\n",buf);
-		// 	printf("len_buf = %d\n",len_buf);
-		// 	printf("str strjoin(str,buf,num) = %s\n",str);
-		// 	break;
-		// }
 	}
 	if (str == NULL)
 	{
@@ -138,7 +120,6 @@ char *get_next_line(int fd)
 int main()
 {
     int	fd;
-		//printf("ft_strchr_l = %s\n",ft_strchr_l("opal\n123",'a'));
     	fd = open("opal", O_RDONLY);
     	printf("get_next_line = %s\n",get_next_line(fd));
 		printf("get_next_line = %s\n",get_next_line(fd));
