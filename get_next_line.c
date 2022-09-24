@@ -99,6 +99,7 @@ char *get_next_line(int fd)
 	printf("str strjoin(str,buf,num) = %s\n",str);
 	b.str = ft_strchr_l(buf);
 	printf("b.str ft_strchr = %s \n",b.str);
+	return (str);
    
 }
 
