@@ -134,5 +134,5 @@ int main()
     	fd = open("opal", O_RDONLY);
     	printf("get_next_line = %s\n",get_next_line(fd));
 		printf("get_next_line = %s\n",get_next_line(fd));
-		// printf("get_next_line = %s\n",get_next_line(fd));
+		printf("get_next_line = %s\n",get_next_line(fd));
 }
