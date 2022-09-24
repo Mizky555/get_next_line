@@ -22,6 +22,24 @@ char	*ft_strchr_l(const char *s, int c)
 	return (0);
 }
 
+// char	*ft_strchr_r(const char *s, int c)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (s[i] != '\n')
+// 	{
+// 		if (s[i] == (char)c)
+// 		{
+// 			return ((char *)&s[i]);
+// 		}
+// 		i++;
+// 	}
+// 	if (c == '\0')
+// 		return ((char *)&s[i]);
+// 	return (0);
+// }
+
 char	*ft_strchr_r(const char *s, int c)
 {
 	int	i;
@@ -104,7 +122,7 @@ int main()
 {
     int	fd;
 		printf("ft_strchr_l = %s\n",ft_strchr_l("opal\n123",'a'));
-		printf("ft_strchr_r = %s\n",ft_strchr_r("opal\n123",'a'));
+		printf("ft_strchr_r = %s\n",ft_strchr_r("opal\n1a23",'a'));
     //fd = open("opal_i", O_RDONLY);
     //printf("get_next_line = \n",get_next_line(fd));
 }
