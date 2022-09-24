@@ -22,7 +22,7 @@ char	*ft_strchr_l(const char *s, int c)
 
 size_t    ft_strlen(const char *s)
 {
-    int    i;
+    size_t    i;
 
     i = 0;
     while (s[i] != '\0')
