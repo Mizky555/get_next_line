@@ -42,7 +42,7 @@ char    *get_next_line(int fd)
     b.str = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     i_buf = 0;
     str = (char *) malloc(sizeof(char) * 1);
-    str = 'a';
+    str = "a";
     while (1)
     {
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
