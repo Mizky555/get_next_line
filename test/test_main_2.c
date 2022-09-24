@@ -41,6 +41,7 @@ char    *get_next_line(int fd)
 
     b.str = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     i_buf = 0;
+    str = NULL;
     while (1)
     {
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
