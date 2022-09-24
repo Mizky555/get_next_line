@@ -45,8 +45,8 @@ char    *get_next_line(int fd)
     {
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
         len_buf = read(fd, buf ,BUFFER_SIZE);
-        if (b.buf == 0)
-            b.buf = 0;
+        if (b.len == 0)
+            b.len = 0;
         while(i_buf < BUFFER_SIZE)
         {
             
