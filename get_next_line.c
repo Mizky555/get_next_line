@@ -91,28 +91,32 @@ char *get_next_line(int fd)
 	static box b;
 
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
-	len_buf = 1;
     if (buf == NULL)
 		return (NULL);
 	while (1)
 	{
-		if (len_buf == 0)
-		{
-			buf = b.str;
-			printf("Sssssssssssssssssssssssssssssssssssssss\n");
-			len_buf = ft_strlen(buf);
+		len_buf = read(fd, buf, BUFFER_SIZE);
+		str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
+		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ให้ต่อแล้วเบรก
 			break;
-		}
-		else
-			len_buf = read(fd, buf, BUFFER_SIZE);
-		if (len_newline(buf, len_buf) != len_buf)
-		{
-			str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
-			printf("buf = %s\n",buf);
-			printf("len_buf = %d\n",len_buf);
-			printf("str strjoin(str,buf,num) = %s\n",str);
-			break;
-		}
+
+		// if (len_buf == 0)
+		// {
+		// 	buf = b.str;
+		// 	printf("Sssssssssssssssssssssssssssssssssssssss\n");
+		// 	len_buf = ft_strlen(buf);
+		// 	break;
+		// }
+		// else
+		// 	len_buf = read(fd, buf, BUFFER_SIZE);
+		// if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ให้ต่อแล้วเบรก
+		// {
+		// 	str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
+		// 	printf("buf = %s\n",buf);
+		// 	printf("len_buf = %d\n",len_buf);
+		// 	printf("str strjoin(str,buf,num) = %s\n",str);
+		// 	break;
+		// }
 	}
 	b.str = ft_strchr_l(buf);
 	printf("b.str ft_strchr = %s \n",b.str);
