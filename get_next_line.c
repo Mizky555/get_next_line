@@ -78,13 +78,14 @@ char get_next_line(int fd)
     char *buf;
     int len_buf;
 	char *str;
+	static box b;
 
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     len_buf = read(fd, buf, BUFFER_SIZE);
 	printf("len_buf = %d",len_buf);
     str = ft_strjoin(str,buf,len_newline(buf, len_buf));
 	printf("str strjoin(str,buf,num) = %s\n",str);
-	b.str = ft_strchr_l(buf)
+	b.str = ft_strchr_l(buf);
 	printf("b.str ft_strchr = %s \n",b.str);
    
 }
@@ -92,7 +93,7 @@ char get_next_line(int fd)
 int main()
 {
     int	fd;
-		printf("ft_strchr_l = %s\n",ft_strchr_l("opal\n123",'a'));
-    //fd = open("opal_i", O_RDONLY);
-    //printf("get_next_line = \n",get_next_line(fd));
+		//printf("ft_strchr_l = %s\n",ft_strchr_l("opal\n123",'a'));
+    	fd = open("opal_i", O_RDONLY);
+    	printf("get_next_line = \n",get_next_line(fd));
 }
