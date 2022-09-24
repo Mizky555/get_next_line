@@ -13,8 +13,6 @@ typedef struct boxbox
 {
 	char	*str;
 	int	len;
-	len = 0;
-
 }box;
 
 
