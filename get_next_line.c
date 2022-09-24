@@ -44,14 +44,7 @@ char	*ft_strjoin(char const *s1, char const *s2, size_t len_s2)
 	return (str);
 }
 
-char get_next_line(int fd)
-{
-    char *buf;
 
-    len_buf = read(fd, buf, BUFFER_SIZE);
-    while (1)
-    
-}
 
 int main()
 {
