@@ -52,23 +52,33 @@ char	*ft_strjoin(char const *s1, char const *s2, size_t len_s2)
 	int		j2;
 	size_t	len;
 
-	len = ft_strlen(s1) + len_s2;
-	str = malloc(sizeof(char) * len + 1);
 	i = 0;
-	j1 = 0;
-	j2 = 0;
+	j = 0;
+	if (s1 == NULL)
+		len = ft_strlen(s2);
+	else
+		len = ft_strlen(s1) + len_s2;
+	
+	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
-	while (i < len)
+
+	while (s1 != NULL && s1[i] != '\0')
 	{
-		if (i < ft_strlen(s1))
-			str[i] = s1[j1++];
-		else if (i < len)
-			str[i] = s2[j2++];
+		str[i] = s1[i];
 		i++;
 	}
+	while (s2 != NULL && s2[j] != '\0')
+		str[i++] = s2[j++];
+	// while (i < len)
+	// {
+
+	// 	if (i < ft_strlen(s1))
+	// 		str[i] = s1[j1++];
+	// 	else if (i < len)
+	// 		str[i] = s2[j2++];
+	// 	i++;
+	// }
 	str[i] = '\0';
 	return (str);
 }
