@@ -93,13 +93,13 @@ char *get_next_line(int fd)
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     if (buf == NULL)
 		return (NULL);
-		printf("fd = %d\n",fd);
 		len_buf = read(fd, buf, BUFFER_SIZE);
 		if (buf == NULL)
 		{
 			buf = b.str;
 			len_buf = ft_strlen(b.str);
 		}
+		printf("buf = %s\n",buf);
 		printf("len_buf = %d\n",len_buf);
     	str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
 		printf("str strjoin(str,buf,num) = %s\n",str);
