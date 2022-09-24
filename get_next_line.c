@@ -73,7 +73,7 @@ char	*ft_strjoin(char const *s1, char const *s2, size_t len_s2)
 	return (str);
 }
 
-char get_next_line(int fd)
+char *get_next_line(int fd)
 {
     char *buf;
     int len_buf;
@@ -95,5 +95,5 @@ int main()
     int	fd;
 		//printf("ft_strchr_l = %s\n",ft_strchr_l("opal\n123",'a'));
     	fd = open("opal", O_RDONLY);
-    	printf("get_next_line = \n",get_next_line(fd));
+    	printf("get_next_line = %s\n",get_next_line(fd));
 }
