@@ -90,6 +90,7 @@ char *get_next_line(int fd)
 	char *str;
 	static box b;
 
+	str = NULL;
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     if (buf == NULL)
 		return (NULL);
