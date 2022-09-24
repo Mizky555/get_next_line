@@ -94,7 +94,7 @@ char *get_next_line(int fd)
     if (buf == NULL)
 		return (NULL);
 
-	while (len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str))
+	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str))
 	{
 		len_buf = read(fd, buf, BUFFER_SIZE);
 		str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
