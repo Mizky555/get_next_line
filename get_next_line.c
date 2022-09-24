@@ -93,7 +93,8 @@ char *get_next_line(int fd)
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     if (buf == NULL)
 		return (NULL);
-	while (1)
+
+	while (len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str))
 	{
 		len_buf = read(fd, buf, BUFFER_SIZE);
 		str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
