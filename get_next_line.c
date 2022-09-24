@@ -83,7 +83,7 @@ char *get_next_line(int fd)
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     if (buf == NULL)
 		return (NULL);
-	printf("aaa\n");
+	printf("fd = %d\n",fd);
 	len_buf = read(fd, buf, BUFFER_SIZE);
 	printf("len_buf = %d",len_buf);
     str = ft_strjoin(str,buf,len_newline(buf, len_buf));
