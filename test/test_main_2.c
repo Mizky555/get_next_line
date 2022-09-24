@@ -77,8 +77,9 @@ int main()
 {
     int fd;
     fd = open("opal_i", O_RDONLY);
-    printf("line = %s\n", get_next_line(fd));
-    printf("line = %s\n", get_next_line(fd));
-    printf("line = %s\n", get_next_line(fd));
+    printf("oapl");
+    //printf("line = %s\n", get_next_line(fd));
+    //printf("line = %s\n", get_next_line(fd));
+    //printf("line = %s\n", get_next_line(fd));
     close(fd);
 }
