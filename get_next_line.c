@@ -103,7 +103,7 @@ char get_next_line(int fd)
 int main()
 {
     int	fd;
-    printf("ft_strchr_l = %s\n",ft_strchr_l("opal\n123",4));
+		printf("ft_strchr_l = %d\n",ft_strchr_l("opal\n123",4));
     //fd = open("opal_i", O_RDONLY);
     //printf("get_next_line = \n",get_next_line(fd));
 }
