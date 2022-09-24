@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include "get_next_line.h"
 
-size_t    ft_strlen(const char *s)
+int   ft_strlen(const char *s)
 {
-    size_t    i;
+    int    i;
 
     i = 0;
     while (s[i] != '\0')
@@ -44,16 +44,16 @@ int	len_newline(char *buf,int len_buf){
     }
     return (len_buf);
 }
-char	*ft_strjoin(char const *s1, char const *s2, size_t len_s2)
+char	*ft_strjoin(char const *s1, char const *s2, int len_s2)
 {
 	char	*str;
-	size_t	i;
+	int	i;
 	int		j;
-	size_t	len;
+	int	len;
 
 	i = 0;
 	j = 0;
-	printf("len_s2 = %d\n",len_s2);
+	// printf("len_s2 = %d\n",len_s2);
 	if (s1 == NULL)
 		len = len_s2;
 	else
@@ -109,19 +109,19 @@ char *get_next_line(int fd)
 	{
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str)));
 		b.str = ft_strchr_l(b.str);
-		printf("b.str ft_strchr = %s \n",b.str);
+		// printf("b.str ft_strchr = %s \n",b.str);
 		return (str);
 	}
 	b.str = ft_strchr_l(buf);
-	printf("b.str ft_strchr = %s \n",b.str);
+	//printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
 }
 
-int main()
-{
-    int	fd;
-    	fd = open("opal", O_RDONLY);
-    	printf("get_next_line = %s\n",get_next_line(fd));
-		printf("get_next_line = %s\n",get_next_line(fd));
-		printf("get_next_line = %s\n",get_next_line(fd));
-}
+// int main()
+// {
+//     int	fd;
+//     	fd = open("opal", O_RDONLY);
+//     	printf("get_next_line = %s\n",get_next_line(fd));
+// 		printf("get_next_line = %s\n",get_next_line(fd));
+// 		printf("get_next_line = %s\n",get_next_line(fd));
+// }
