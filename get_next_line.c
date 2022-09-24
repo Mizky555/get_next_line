@@ -124,6 +124,7 @@ char *get_next_line(int fd)
 	{
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str)));
 		b.str = ft_strchr_l(b.str);
+		printf("b.str ft_strchr = %s \n",b.str);
 		return (str);
 	}
 	b.str = ft_strchr_l(buf);
