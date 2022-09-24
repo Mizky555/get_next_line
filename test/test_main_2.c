@@ -45,7 +45,7 @@ char    *get_next_line(int fd)
     {
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
         len_buf = read(fd, buf ,BUFFER_SIZE);
-        printf("i_buf = %d\n",i_buf);
+        printf("b.len = %d\n",b.len);
         if (b.len == 0)
             b.len = 0;
         printf("i_buf = %d\n",i_buf);
