@@ -45,7 +45,8 @@ char    *get_next_line(int fd)
     {
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
         len_buf = read(fd, buf ,BUFFER_SIZE);
-        i_buf = 0;
+        if (i_buf == 0)
+            i_buf = 0;
         while(i_buf < BUFFER_SIZE)
         {
             
@@ -61,6 +62,7 @@ char    *get_next_line(int fd)
                 str = ft_strjoin_cha(str, buf[i_buf]);
                 if (buf[i_buf] != '\0')
                     str = ft_strjoin_cha(str, '\0');
+                b.len = i_buf + 1;
                 return (str);
             }
             str = ft_strjoin_cha(str, buf[i_buf]);
