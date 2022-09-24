@@ -98,9 +98,12 @@ char *get_next_line(int fd)
 	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str))
 	{
 		len_buf = read(fd, buf, BUFFER_SIZE);
+		if (len_buf == 0)
+			break;
 		str = ft_strjoin(str,buf,len_newline(buf, len_buf));
 		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ให้ต่อแล้วเบรก
 			break;
+
 
 		// if (len_buf == 0)
 		// {
