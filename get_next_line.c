@@ -27,7 +27,7 @@ char	*ft_strchr_l(const char *s)
 		}
 		i++;
 	}
-	return (0);
+	return ((char *)&s[i]);
 }
 
 
@@ -93,12 +93,13 @@ char *get_next_line(int fd)
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     if (buf == NULL)
 		return (NULL);
-	printf("fd = %d\n",fd);
+		printf("fd = %d\n",fd);
 		len_buf = read(fd, buf, BUFFER_SIZE);
 		printf("len_buf = %d\n",len_buf);
     	str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
 		printf("str strjoin(str,buf,num) = %s\n",str);
-		b.str = ft_strchr_l(buf);
+
+		b.str = ft_strchr_l(b.str);
 		printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
    

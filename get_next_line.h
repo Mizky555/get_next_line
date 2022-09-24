@@ -12,6 +12,7 @@
 typedef struct boxbox
 {
 	char	*str;
+	char	*stray;
 	int	len;
 }box;
 

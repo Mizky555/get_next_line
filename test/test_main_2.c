@@ -39,7 +39,7 @@ char    *get_next_line(int fd)
     char    *str;
     int i_buf;
 
-    b.str = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
+    // b.str = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     i_buf = 0;
     str = (char *) malloc(sizeof(char) * 1);
     str = "a";
