@@ -53,8 +53,9 @@ char	*ft_strjoin(char const *s1, char const *s2, size_t len_s2)
 
 	i = 0;
 	j = 0;
+	printf("len_s2 = %d\n",len_s2);
 	if (s1 == NULL)
-		len = ft_strlen(s2);
+		len = len_s2;
 	else
 		len = ft_strlen(s1) + len_s2;
 	
@@ -67,7 +68,7 @@ char	*ft_strjoin(char const *s1, char const *s2, size_t len_s2)
 		str[i] = s1[i];
 		i++;
 	}
-	while (s2 != NULL && s2[j] != '\0')
+	while (s2 != NULL && j < len_s2)
 		str[i++] = s2[j++];
 	// while (i < len)
 	// {
@@ -93,12 +94,15 @@ char *get_next_line(int fd)
     if (buf == NULL)
 		return (NULL);
 	printf("fd = %d\n",fd);
-	len_buf = read(fd, buf, BUFFER_SIZE);
-	printf("len_buf = %d\n",len_buf);
-    str = ft_strjoin(str,buf,len_newline(buf, len_buf));
-	printf("str strjoin(str,buf,num) = %s\n",str);
-	b.str = ft_strchr_l(buf);
-	printf("b.str ft_strchr = %s \n",b.str);
+	while (1){
+		len_buf = read(fd, buf, BUFFER_SIZE);
+		printf("len_buf = %d\n",len_buf);
+		if ()
+    	str = ft_strjoin(str,buf,len_newline(buf, len_buf));
+		printf("str strjoin(str,buf,num) = %s\n",str);
+		b.str = ft_strchr_l(buf);
+		printf("b.str ft_strchr = %s \n",b.str);
+	}
 	return (str);
    
 }
