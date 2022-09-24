@@ -97,7 +97,7 @@ char *get_next_line(int fd)
 	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str))
 	{
 		len_buf = read(fd, buf, BUFFER_SIZE);
-		str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
+		str = ft_strjoin(str,buf,len_newline(buf, len_buf));
 		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ให้ต่อแล้วเบรก
 			break;
 
@@ -119,6 +119,8 @@ char *get_next_line(int fd)
 		// 	break;
 		// }
 	}
+	if (str == NULL)
+		str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
 	b.str = ft_strchr_l(buf);
 	printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
