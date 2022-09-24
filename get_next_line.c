@@ -97,7 +97,7 @@ char *get_next_line(int fd)
 		if (buf == NULL)
 		{
 			buf = b.str;
-			len_buf = ft_strlen(b.str);
+			len_buf = ft_strlen(buf);
 		}
 		printf("buf = %s\n",buf);
 		printf("len_buf = %d\n",len_buf);
