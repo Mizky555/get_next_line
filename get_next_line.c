@@ -94,15 +94,12 @@ char *get_next_line(int fd)
     if (buf == NULL)
 		return (NULL);
 	printf("fd = %d\n",fd);
-	while (1){
 		len_buf = read(fd, buf, BUFFER_SIZE);
 		printf("len_buf = %d\n",len_buf);
-		if ()
     	str = ft_strjoin(str,buf,len_newline(buf, len_buf));
 		printf("str strjoin(str,buf,num) = %s\n",str);
 		b.str = ft_strchr_l(buf);
 		printf("b.str ft_strchr = %s \n",b.str);
-	}
 	return (str);
    
 }
