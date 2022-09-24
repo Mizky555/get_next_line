@@ -71,7 +71,9 @@ char    *get_next_line(int fd)
                 b.len = i_buf + 1;
                 return (str);
             }
+            printf("i_buf = %d\n",i_buf);
             str = ft_strjoin_cha(str, buf[i_buf]);
+            printf("str = %s\n",str);
             i_buf++;
         }
         free(buf);
