@@ -80,10 +80,10 @@ char *get_next_line(int fd)
 	char *str;
 	static box b;
 
-	printf("aaa\n");
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     if (buf == NULL)
 		return (NULL);
+	printf("aaa\n");
 	len_buf = read(fd, buf, BUFFER_SIZE);
 	printf("len_buf = %d",len_buf);
     str = ft_strjoin(str,buf,len_newline(buf, len_buf));
