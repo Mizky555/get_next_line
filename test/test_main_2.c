@@ -45,8 +45,10 @@ char    *get_next_line(int fd)
     {
         buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
         len_buf = read(fd, buf ,BUFFER_SIZE);
+        printf("i_buf = %d\n",i_buf);
         if (b.len == 0)
             b.len = 0;
+        printf("i_buf = %d\n",i_buf);
         while(i_buf < BUFFER_SIZE)
         {
             
@@ -77,9 +79,8 @@ int main()
 {
     int fd;
     fd = open("opal_i", O_RDONLY);
-    printf("oapl");
-    //printf("line = %s\n", get_next_line(fd));
-    //printf("line = %s\n", get_next_line(fd));
-    //printf("line = %s\n", get_next_line(fd));
+    printf("line = %s\n", get_next_line(fd));
+    printf("line = %s\n", get_next_line(fd));
+    printf("line = %s\n", get_next_line(fd));
     close(fd);
 }
