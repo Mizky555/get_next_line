@@ -23,7 +23,7 @@ char	*ft_strchr_l(const char *s, int c)
 	{
 		if (s[i] == '\n')
 		{
-			return ((char *)&s[i]);
+			return ((char *)&s[i + 1]);
 		}
 		i++;
 	}
