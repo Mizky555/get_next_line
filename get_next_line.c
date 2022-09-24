@@ -121,7 +121,7 @@ char *get_next_line(int fd)
 		// }
 	}
 	if (str == NULL)
-		str = ft_strjoin(str,b.str,len_newline(b.str, len_buf));
+		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str)));
 	b.str = ft_strchr_l(buf);
 	printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
