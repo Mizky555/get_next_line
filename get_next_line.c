@@ -102,7 +102,7 @@ char *get_next_line(int fd)
 			printf("Sssssssssssssssssssssssssssssssssssssss\n");
 			len_buf = ft_strlen(buf);
 		}
-		if (len_newline(buf) != len_buf)
+		if (len_newline(buf, len_buf) != len_buf)
 		{
 			str = ft_strjoin(b.str,buf,len_newline(buf, len_buf));
 			printf("buf = %s\n",buf);
