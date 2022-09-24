@@ -91,6 +91,7 @@ char *get_next_line(int fd)
 	static box b;
 
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
+	len_buf = 1;
     if (buf == NULL)
 		return (NULL);
 	while (1)
