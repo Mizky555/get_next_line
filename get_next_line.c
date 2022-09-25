@@ -95,7 +95,7 @@ char *get_next_line(int fd)
 		if (len_newline(buf, len_buf) != len_buf)
 			break;
 	}
-	printf("remaining");
+	printf("remaining\n");
 	if (str == NULL)
 	{
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str)));
