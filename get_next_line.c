@@ -111,9 +111,10 @@ char *get_next_line(int fd)
 
 	buf = NULL;
 	str = NULL;
-    buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
+    buf = (char *) malloc(sizeof(char) * (BUFFER_SIZE + 1));
     if (buf == NULL)
 		return (NULL);
+	ft_memset(buf, 0, BUFFER_SIZE + 1);
 	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str)) //ถ้าเจอ \n ใน b.str และ ตำแหน่งของ \n อยู่ทีตำแหน่งสุเท้ายของ b.str ให้ str = b.str
 		str = b.str;
 	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str)) //b.str == NULL หรือ ถ้าเจอ \n ใน b.str และ ตำแหน่งของ \n อยู่ทีตำแหน่งสุเท้ายของ b.str
