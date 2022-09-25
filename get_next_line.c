@@ -97,6 +97,8 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 	while (s2 != NULL && j < len_s2)
 		str[i++] = s2[j++];
 	str[i] = '\0';
+	if (s1)
+		free(s1);
 	return (str);
 }
 
