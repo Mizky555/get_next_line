@@ -43,7 +43,7 @@ char	*ft_strchr_l(char *s)
 		{
 			if (s[i] == '\n')
 			{
-				str = ft_strjoin(str, &s[i + 1], ft_strlen(s + i + 1));
+				str = ft_strjoin(str, &s[i + 1], ft_strlen(&s[i + 1]));
 				//return ((char *)&s[i + 1]);
 				return (str);
 			}
