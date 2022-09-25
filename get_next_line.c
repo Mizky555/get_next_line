@@ -95,7 +95,7 @@ char *get_next_line(int fd)
 		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ใน buf จะถูกเตะออก
 			break;
 	}
-	if (str == NULL)
+	if (str == NULL) 
 	{
 		printf("remaining\n");
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str)));
@@ -103,7 +103,8 @@ char *get_next_line(int fd)
 		// printf("b.str ft_strchr = %s \n",b.str);
 		return (str);
 	}
-	b.str = ft_strchr_l(buf);
+	else
+		b.str = ft_strchr_l(buf);
 	//printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
 }
