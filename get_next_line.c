@@ -144,8 +144,8 @@ char *get_next_line(int fd)
 			break;
 		buf[len_buf] = 0;
 		str = ft_strjoin(str,buf,len_newline(buf, len_buf,1)); // ถ้าอ่านเจอจะจับ buf ที่จนถึง \n ไปต่อท้าย
-		printf("str = %s\n", str);
-		printf("len new line = %d\tlenbuf = %d\n", len_newline(buf, len_buf), len_buf);
+		// printf("str = %s\n", str);
+		// printf("len new line = %d\tlenbuf = %d\n", len_newline(buf, len_buf), len_buf);
 		if (len_newline(buf, len_buf, 2) != 0) //ถ้าเจอ \n ใน buf จะถูกเตะออก
 			break;
 	}
