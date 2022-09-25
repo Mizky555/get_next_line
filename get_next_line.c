@@ -63,7 +63,8 @@ char	*ft_strchr_l(char *s)
 	return (NULL);
 }
 
-int	len_newline(char *buf,int len_buf){
+//mode 1 join mode 2 seek
+int	len_newline(char *buf,int len_buf, int mode){
     int i;
 
     i = 0;
@@ -75,7 +76,10 @@ int	len_newline(char *buf,int len_buf){
 				return (i + 1);
 			i++;
 		}
-		return (len_buf);
+		if (mode == 1)
+			return (len_buf);
+		else if (mode == 2)
+			return (0)
 	}
 	return (0);
 }
@@ -131,18 +135,18 @@ char *get_next_line(int fd)
     if (buf == NULL)
 		return (NULL);
 	ft_memset(buf, 0, BUFFER_SIZE + 1);
-	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str)) //ถ้าเจอ \n ใน b.str และ ตำแหน่งของ \n อยู่ทีตำแหน่งสุเท้ายของ b.str ให้ str = b.str
+	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str)) //ถ้าเจอ \n ใน b.str และ ตำแหน่งของ \n อยู่ทีตำแหน่งสุเท้ายของ b.str ให้ str = b.str
 		str = b.str;
-	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str)) //b.str == NULL หรือ ถ้าเจอ \n ใน b.str และ ตำแหน่งของ \n อยู่ทีตำแหน่งสุเท้ายของ b.str
+	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str)) //b.str == NULL หรือ ถ้าเจอ \n ใน b.str และ ตำแหน่งของ \n อยู่ทีตำแหน่งสุเท้ายของ b.str
 	{
 		len_buf = read(fd, buf, BUFFER_SIZE);//อ่านไฟล์ใส่เข้า buf
 		if (len_buf == 0) //ถ้าอ่านหมดไฟล์แล้ว len_buf จะเป็น 0 > Break
 			break;
 		buf[len_buf] = 0;
-		str = ft_strjoin(str,buf,len_newline(buf, len_buf)); // ถ้าอ่านเจอจะจับ buf ที่จนถึง \n ไปต่อท้าย
+		str = ft_strjoin(str,buf,len_newline(buf, len_buf,1)); // ถ้าอ่านเจอจะจับ buf ที่จนถึง \n ไปต่อท้าย
 		printf("str = %s\n", str);
 		printf("len new line = %d\tlenbuf = %d\n", len_newline(buf, len_buf), len_buf);
-		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ใน buf จะถูกเตะออก
+		if (len_newline(buf, len_buf, 2) != 0) //ถ้าเจอ \n ใน buf จะถูกเตะออก
 			break;
 	}
 	printf("exit\n");
@@ -150,7 +154,7 @@ char *get_next_line(int fd)
 	if (str == NULL) 
 	{
 		// printf("remaining\n");
-		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str)));
+		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str),1));
 		// printf("remaining2\n");
 		b.str = ft_strchr_l(b.str);
 		// printf("b.str ft_strchr = %s \n",b.str);
