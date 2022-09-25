@@ -84,20 +84,20 @@ char *get_next_line(int fd)
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     if (buf == NULL)
 		return (NULL);
-	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str))
+	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str)) //ถ้าเจอ \n ใน b.str และ ตำแหน่งของ \n อยู่ทีตำแหน่งสุเท้ายของ b.str ให้ str = b.str
 		str = b.str;
-	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str))
+	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str)) == ft_strlen(b.str)) //b.str == NULL หรือ ถ้าเจอ \n ใน b.str และ ตำแหน่งของ \n อยู่ทีตำแหน่งสุเท้ายของ b.str
 	{
-		len_buf = read(fd, buf, BUFFER_SIZE);
-		if (len_buf == 0)
+		len_buf = read(fd, buf, BUFFER_SIZE);//อ่านไฟล์ใส่เข้า buf
+		if (len_buf == 0) //ถ้าอ่านหมดไฟล์แล้ว len_buf จะเป็น 0 > Break
 			break;
-		str = ft_strjoin(str,buf,len_newline(buf, len_buf));
-		if (len_newline(buf, len_buf) != len_buf)
+		str = ft_strjoin(str,buf,len_newline(buf, len_buf)); // ถ้าอ่านเจอจะจับ buf ที่จนถึง \n ไปต่อท้าย
+		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ใน buf จะถูกเตะออก
 			break;
 	}
-	printf("remaining\n");
 	if (str == NULL)
 	{
+		printf("remaining\n");
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str)));
 		b.str = ft_strchr_l(b.str);
 		// printf("b.str ft_strchr = %s \n",b.str);
