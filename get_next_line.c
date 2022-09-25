@@ -4,6 +4,19 @@
 #include <stdlib.h>
 #include "get_next_line.h"
 
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		((char *)b)[i] = c;
+		i++;
+	}
+	return (b);
+}
+
 int   ft_strlen(const char *s)
 {
     int    i;
@@ -74,6 +87,7 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
+	// bzero
 	while (s1 != NULL && s1[i] != '\0')
 	{
 		str[i] = s1[i];
