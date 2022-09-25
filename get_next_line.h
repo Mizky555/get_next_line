@@ -9,12 +9,13 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-typedef struct boxbox
+typedef struct s_box
 {
 	char	*str;
 	char	*stray;
 	int	len;
-}box;
+}	t_box;
 
+char *get_next_line(int fd);
 
 #endif

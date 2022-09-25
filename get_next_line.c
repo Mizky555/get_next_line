@@ -88,7 +88,7 @@ char *get_next_line(int fd)
     char *buf;
     int len_buf;
 	char *str;
-	static box b;
+	static t_box b;
 
 	str = NULL;
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
