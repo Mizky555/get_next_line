@@ -55,7 +55,7 @@ char	*ft_strchr_l(char *s)
 	if (s)
 		free(s);
 	return (NULL);
-}
+}//27
 
 int	len_newline(char *buf,int len_buf, int mode)
 {

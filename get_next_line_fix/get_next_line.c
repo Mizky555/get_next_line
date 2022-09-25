@@ -32,7 +32,7 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 	if (s1)
 		free(s1);
 	return (str);
-}
+}//31
 
 char *get_next_line(int fd)
 {
@@ -75,5 +75,5 @@ char *get_next_line(int fd)
 	
 	b.str = ft_strchr_l(buf);
 	return (str);
-}
+} //39
 
