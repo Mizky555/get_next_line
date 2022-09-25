@@ -45,6 +45,8 @@ char	*ft_strchr_l(char *s)
 			{
 				str = ft_strjoin(str, &s[i + 1], ft_strlen(&s[i + 1]));
 				//return ((char *)&s[i + 1]);
+				if (s)
+					free(s);
 				return (str);
 			}
 			i++;
@@ -147,11 +149,11 @@ char *get_next_line(int fd)
 		return (str);
 	}
 	b.str = ft_strchr_l(buf);
-	if (buf)
-	{
-		free(buf);
-		buf = NULL;
-	}
+	// if (buf)
+	// {
+	// 	free(buf);
+	// 	buf = NULL;
+	// }
 	//printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
 }
