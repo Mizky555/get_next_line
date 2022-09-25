@@ -94,6 +94,7 @@ char *get_next_line(int fd)
 	char *str;
 	static t_box b;
 
+	buf = NULL;
 	str = NULL;
     buf = (char *) malloc(sizeof(char) * BUFFER_SIZE + 1);
     if (buf == NULL)
