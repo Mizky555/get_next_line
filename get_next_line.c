@@ -97,8 +97,6 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 	while (s2 != NULL && j < len_s2)
 		str[i++] = s2[j++];
 	str[i] = '\0';
-	if (s1)
-		free(s1);
 	return (str);
 }
 
@@ -141,11 +139,6 @@ char *get_next_line(int fd)
 		return (str);
 	}
 	b.str = ft_strchr_l(buf);
-	if (buf)
-	{
-		free(buf);
-		buf = NULL;
-	}
 	//printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
 }
