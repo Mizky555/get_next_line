@@ -33,7 +33,7 @@ char	*ft_strchr_l(const char *s)
 			i++;
 		}
 	}
-	return (0);
+	return (NULL);
 }
 
 int	len_newline(char *buf,int len_buf){
@@ -63,7 +63,9 @@ char	*ft_strjoin(char const *s1, char const *s2, int len_s2)
 	i = 0;
 	j = 0;
 	// printf("len_s2 = %d\n",len_s2);
-	printf("nee\n");
+	// printf("nee\n");
+	if (!s1 && !s2)
+		retuern (NULL);
 	if (s1 == NULL)
 		len = len_s2;
 	else
@@ -108,9 +110,9 @@ char *get_next_line(int fd)
 	}
 	if (str == NULL) 
 	{
-		printf("remaining\n");
+		// printf("remaining\n");
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str)));
-		printf("remaining2\n");
+		// printf("remaining2\n");
 		b.str = ft_strchr_l(b.str);
 		// printf("b.str ft_strchr = %s \n",b.str);
 		return (str);
