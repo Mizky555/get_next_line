@@ -75,7 +75,7 @@ int	len_newline(char *buf,int len_buf){
 				return (i + 1);
 			i++;
 		}
-		return (0);
+		return (len_buf);
 	}
 	return (0);
 }
