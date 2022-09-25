@@ -39,7 +39,7 @@ char	*ft_strchr_l(char *s)
 	str = NULL;
 	if (s && s[i])
 	{
-		while (i <= ft_strlen(s))
+		while (i < ft_strlen(s))
 		{
 			if (s[i] == '\n')
 			{
