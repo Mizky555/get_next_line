@@ -1,12 +1,5 @@
 #include "get_next_line.h"
 
-void    *fee(char *s)
-{
-    if (s)
-     free(s);
-    return (0);
-}
-
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
@@ -52,15 +45,17 @@ char	*ft_strchr_l(char *s)
 					free(str);
 					str = NULL;	
 				}
-				fee(s);
+				if (s)
+					free(s);
 				return (str);
 			}
 			i++;
 		}
 	}
-	fee(s);
+	if (s)
+		free(s);
 	return (NULL);
-}//25
+}//27
 
 int	len_newline(char *buf,int len_buf, int mode)
 {
