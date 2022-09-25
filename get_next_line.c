@@ -105,8 +105,6 @@ char *get_next_line(int fd)
 		if (len_buf == 0) //ถ้าอ่านหมดไฟล์แล้ว len_buf จะเป็น 0 > Break
 			break;
 		str = ft_strjoin(str,buf,len_newline(buf, len_buf)); // ถ้าอ่านเจอจะจับ buf ที่จนถึง \n ไปต่อท้าย
-		if (buf)
-			free(buf);
 		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ใน buf จะถูกเตะออก
 			break;
 	}
@@ -117,10 +115,13 @@ char *get_next_line(int fd)
 		// printf("remaining2\n");
 		b.str = ft_strchr_l(b.str);
 		// printf("b.str ft_strchr = %s \n",b.str);
+		if (buf)
+			free(buf);
 		return (str);
 	}
-	else
-		b.str = ft_strchr_l(buf);
+	b.str = ft_strchr_l(buf);
+	if (buf)
+		free(buf);
 	//printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
 }
