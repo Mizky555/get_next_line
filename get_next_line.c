@@ -30,8 +30,6 @@ char	*ft_strchr_l(const char *s)
 	return (0);
 }
 
-
-
 int	len_newline(char *buf,int len_buf){
     int i;
 
@@ -44,6 +42,7 @@ int	len_newline(char *buf,int len_buf){
     }
     return (len_buf);
 }
+
 char	*ft_strjoin(char const *s1, char const *s2, int len_s2)
 {
 	char	*str;
@@ -70,15 +69,6 @@ char	*ft_strjoin(char const *s1, char const *s2, int len_s2)
 	}
 	while (s2 != NULL && j < len_s2)
 		str[i++] = s2[j++];
-	// while (i < len)
-	// {
-
-	// 	if (i < ft_strlen(s1))
-	// 		str[i] = s1[j1++];
-	// 	else if (i < len)
-	// 		str[i] = s2[j2++];
-	// 	i++;
-	// }
 	str[i] = '\0';
 	return (str);
 }
@@ -118,11 +108,11 @@ char *get_next_line(int fd)
 	return (str);
 }
 
-// int main()
-// {
-//     int	fd;
-//     	fd = open("opal", O_RDONLY);
-//     	printf("get_next_line = %s\n",get_next_line(fd));
-// 		printf("get_next_line = %s\n",get_next_line(fd));
-// 		printf("get_next_line = %s\n",get_next_line(fd));
-// }
+int main()
+{
+    int	fd;
+    	fd = open("opal", O_RDONLY);
+    	printf("get_next_line = %s\n",get_next_line(fd));
+		printf("get_next_line = %s\n",get_next_line(fd));
+		printf("get_next_line = %s\n",get_next_line(fd));
+}
