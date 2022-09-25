@@ -132,6 +132,7 @@ char *get_next_line(int fd)
 		len_buf = read(fd, buf, BUFFER_SIZE);//อ่านไฟล์ใส่เข้า buf
 		if (len_buf == 0) //ถ้าอ่านหมดไฟล์แล้ว len_buf จะเป็น 0 > Break
 			break;
+		buf[len_buf] = 0;
 		str = ft_strjoin(str,buf,len_newline(buf, len_buf)); // ถ้าอ่านเจอจะจับ buf ที่จนถึง \n ไปต่อท้าย
 		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ใน buf จะถูกเตะออก
 			break;
