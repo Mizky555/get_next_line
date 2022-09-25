@@ -75,6 +75,7 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 
 	i = 0;
 	j = 0;
+	len = 0;
 	// printf("len_s2 = %d\n",len_s2);
 	// printf("nee\n");
 	str = NULL;
