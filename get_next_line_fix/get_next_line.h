@@ -22,5 +22,6 @@ char	*ft_strchr_l(char *s);
 int	len_newline(char *buf,int len_buf, int mode);
 char	*ft_strjoin(char *s1, char *s2, int len_s2);
 char *get_next_line(int fd);
+char    *fee(char *s);
 
 #endif
