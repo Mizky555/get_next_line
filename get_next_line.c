@@ -37,13 +37,17 @@ int	len_newline(char *buf,int len_buf){
     int i;
 
     i = 0;
-    while(i <= len_buf)
-    {
-        if (buf[i] == '\n')
-            return (i);
-        i++;
-    }
-    return (len_buf);
+	if (buf)
+	{
+		while(i <= len_buf)
+		{
+			if (buf[i] == '\n')
+				return (i);
+			i++;
+		}
+		return (len_buf);
+	}
+	return (0);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2, int len_s2)
