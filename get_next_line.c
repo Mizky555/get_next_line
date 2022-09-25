@@ -102,9 +102,10 @@ char *get_next_line(int fd)
 		if (len_buf == 0)
 			break;
 		str = ft_strjoin(str,buf,len_newline(buf, len_buf));
-		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ให้ต่อแล้วเบรก
+		if (len_newline(buf, len_buf) != len_buf)
 			break;
 	}
+	printf("remaining");
 	if (str == NULL)
 	{
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str)));
