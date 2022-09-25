@@ -65,7 +65,7 @@ char	*ft_strjoin(char const *s1, char const *s2, int len_s2)
 	// printf("len_s2 = %d\n",len_s2);
 	// printf("nee\n");
 	if (!s1 && !s2)
-		retuern (NULL);
+		return (NULL);
 	if (s1 == NULL)
 		len = len_s2;
 	else
