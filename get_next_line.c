@@ -161,12 +161,35 @@ char *get_next_line(int fd)
 int main()
 {
     int	fd;
-    	fd = open("opal", O_RDONLY);
-    	printf("get_next_line = %s\n",get_next_line(fd));
-		printf("get_next_line = %s\n",get_next_line(fd));
-		printf("get_next_line = %s\n",get_next_line(fd));
-		printf("get_next_line = %s\n",get_next_line(fd));
-		printf("get_next_line = %s\n",get_next_line(fd));
-		printf("get_next_line = %s\n",get_next_line(fd));
-		
+	char *str;
+
+	str = NULL;
+	fd = open("opal", O_RDONLY);
+
+	str = get_next_line(fd);
+	printf("get_next_line = %s\n",str);
+	free(str);
+	str = NULL;
+
+	str = get_next_line(fd);
+	printf("get_next_line = %s\n",str);
+	free(str);
+	str = NULL;
+
+	str = get_next_line(fd);
+	printf("get_next_line = %s\n",str);
+	free(str);
+	str = NULL;
+
+	str = get_next_line(fd);
+	printf("get_next_line = %s\n",str);
+	free(str);
+	str = NULL;
+
+	str = get_next_line(fd);
+	printf("get_next_line = %s\n",str);
+	free(str);
+	str = NULL;
+
+	close(fd);
 }
