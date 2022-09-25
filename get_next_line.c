@@ -64,13 +64,13 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 	j = 0;
 	// printf("len_s2 = %d\n",len_s2);
 	// printf("nee\n");
+	str = NULL;
 	if (!s1 && !s2)
 		return (NULL);
 	if (s1 == NULL)
 		len = len_s2;
 	else
 		len = ft_strlen(s1) + len_s2;
-	
 	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
