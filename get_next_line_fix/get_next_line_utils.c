@@ -4,6 +4,7 @@ void    *fee(char *s)
 {
     if (s)
      free(s);
+    return (0);
 }
 
 void	*ft_memset(void *b, int c, size_t len)
