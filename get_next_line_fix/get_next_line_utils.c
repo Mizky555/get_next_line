@@ -1,6 +1,6 @@
 #include "get_next_line.h"
 
-char    *fee(char *s)
+void    *fee(char *s)
 {
     if (s)
      free(s);
