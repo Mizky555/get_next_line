@@ -22,13 +22,16 @@ char	*ft_strchr_l(const char *s)
 	int	i;
 
 	i = 0;
-	while (i <= ft_strlen(s))
+	if (s)
 	{
-		if (s[i] == '\n')
+		while (i <= ft_strlen(s))
 		{
-			return ((char *)&s[i + 1]);
+			if (s[i] == '\n')
+			{
+				return ((char *)&s[i + 1]);
+			}
+			i++;
 		}
-		i++;
 	}
 	return (0);
 }
