@@ -137,6 +137,7 @@ char *get_next_line(int fd)
 		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ใน buf จะถูกเตะออก
 			break;
 	}
+	printf("store bstr = %s\n", b.str);
 	if (str == NULL) 
 	{
 		// printf("remaining\n");
@@ -149,9 +150,12 @@ char *get_next_line(int fd)
 			free(buf);
 			buf = NULL;
 		}
+		printf("after strchr = %s\n", b.str);
 		return (str);
 	}
+	
 	b.str = ft_strchr_l(buf);
+	printf("after strchr = %s\n", b.str);
 	// if (buf)
 	// {
 	// 	free(buf);
