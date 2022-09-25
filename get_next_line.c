@@ -72,7 +72,7 @@ int	len_newline(char *buf,int len_buf){
 		while(i <= len_buf)
 		{
 			if (buf[i] == '\n')
-				return (i);
+				return (i + 1);
 			i++;
 		}
 		return (len_buf);
