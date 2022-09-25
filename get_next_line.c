@@ -17,7 +17,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-int   ft_strlen(const char *s)
+int   ft_strlen(char *s)
 {
     int    i;
 
