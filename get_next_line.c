@@ -143,7 +143,7 @@ char *get_next_line(int fd)
 		if (len_newline(buf, len_buf) != len_buf) //ถ้าเจอ \n ใน buf จะถูกเตะออก
 			break;
 	}
-	printf("store bstr = %s\n", b.str);
+	// printf("store bstr = %s\n", b.str);
 	if (str == NULL) 
 	{
 		// printf("remaining\n");
@@ -156,12 +156,12 @@ char *get_next_line(int fd)
 			free(buf);
 			buf = NULL;
 		}
-		printf("after strchr = %s\n", b.str);
+		// printf("after strchr = %s\n", b.str);
 		return (str);
 	}
 	
 	b.str = ft_strchr_l(buf);
-	printf("after strchr = %s\n", b.str);
+	// printf("after strchr = %s\n", b.str);
 	// if (buf)
 	// {
 	// 	free(buf);
@@ -171,39 +171,39 @@ char *get_next_line(int fd)
 	return (str);
 }
 
-int main(int argc, char **argv)
-{
-    int	fd;
-	char *str;
+// int main(int argc, char **argv)
+// {
+//     int	fd;
+// 	char *str;
 
-	(void) argc;
-	str = NULL;
-	fd = open(argv[1], O_RDONLY);
+// 	(void) argc;
+// 	str = NULL;
+// 	fd = open(argv[1], O_RDONLY);
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	close(fd);
-}
+// 	close(fd);
+// }
