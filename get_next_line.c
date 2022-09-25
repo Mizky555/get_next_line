@@ -149,7 +149,7 @@ char *get_next_line(int fd)
 		if (len_newline(buf, len_buf, 2) != 0) //ถ้าเจอ \n ใน buf จะถูกเตะออก
 			break;
 	}
-	printf("exit\n");
+	// printf("exit\n");
 	// printf("store bstr = %s\n", b.str);
 	if (str == NULL) 
 	{
