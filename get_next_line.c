@@ -45,6 +45,7 @@ char	*ft_strchr_l(char *s)
 			{
 				str = ft_strjoin(str, &s[i + 1], ft_strlen(&s[i + 1]));
 				//return ((char *)&s[i + 1]);
+				printf("debug: %d\n", s[i+1]);
 				if (s)
 					free(s);
 				return (str);
