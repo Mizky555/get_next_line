@@ -119,7 +119,7 @@ char *get_next_line(int fd)
 
 	buf = NULL;
 	str = NULL;
-	if (fd < 0 && read(fd, NULL, 0) < 0)
+	if (fd < 0 || read(fd, NULL, 0) < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
     buf = (char *) malloc(sizeof(char) * (BUFFER_SIZE + 1));
     if (buf == NULL)
