@@ -79,7 +79,7 @@ int	len_newline(char *buf,int len_buf, int mode){
 		if (mode == 1)
 			return (len_buf);
 		else if (mode == 2)
-			return (0)
+			return (0);
 	}
 	return (0);
 }
