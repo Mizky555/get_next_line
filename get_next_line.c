@@ -22,7 +22,7 @@ char	*ft_strchr_l(const char *s)
 	int	i;
 
 	i = 0;
-	if (s)
+	if (s && s[i])
 	{
 		while (i <= ft_strlen(s))
 		{
