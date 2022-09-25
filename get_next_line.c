@@ -9,9 +9,12 @@ int   ft_strlen(const char *s)
     int    i;
 
     i = 0;
-    while (s[i] != '\0')
-        i++;
-    return (i);
+	if (s)
+	{
+		while (s[i] != '\0')
+			i++;
+	}
+	return (i);
 }
 
 char	*ft_strchr_l(const char *s)
