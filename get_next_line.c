@@ -160,38 +160,38 @@ char *get_next_line(int fd)
 	return (str);
 }
 
-int main()
-{
-    int	fd;
-	char *str;
+// int main()
+// {
+//     int	fd;
+// 	char *str;
 
-	str = NULL;
-	fd = open("opal", O_RDONLY);
+// 	str = NULL;
+// 	fd = open("opal", O_RDONLY);
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	str = get_next_line(fd);
-	printf("get_next_line = %s\n",str);
-	free(str);
-	str = NULL;
+// 	str = get_next_line(fd);
+// 	printf("get_next_line = %s\n",str);
+// 	free(str);
+// 	str = NULL;
 
-	close(fd);
-}
+// 	close(fd);
+// }
