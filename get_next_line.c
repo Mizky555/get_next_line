@@ -30,7 +30,7 @@ int   ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strchr_l(const char *s)
+char	*ft_strchr_l(char *s)
 {
 	int	i;
 	char *str;
