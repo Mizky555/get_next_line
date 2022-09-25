@@ -115,6 +115,8 @@ char *get_next_line(int fd)
 
 	buf = NULL;
 	str = NULL;
+	if (fd < 0 && read(fd, NULL, 0) < 0)
+		return (NULL);
     buf = (char *) malloc(sizeof(char) * (BUFFER_SIZE + 1));
     if (buf == NULL)
 		return (NULL);
@@ -145,6 +147,11 @@ char *get_next_line(int fd)
 		return (str);
 	}
 	b.str = ft_strchr_l(buf);
+	if (buf)
+	{
+		free(buf);
+		buf = NULL;
+	}
 	//printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
 }
