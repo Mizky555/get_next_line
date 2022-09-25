@@ -117,12 +117,18 @@ char *get_next_line(int fd)
 		b.str = ft_strchr_l(b.str);
 		// printf("b.str ft_strchr = %s \n",b.str);
 		if (buf)
+		{
 			free(buf);
+			buf = NULL;
+		}
 		return (str);
 	}
 	b.str = ft_strchr_l(buf);
 	if (buf)
+	{
 		free(buf);
+		buf = NULL;
+	}
 	//printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
 }
