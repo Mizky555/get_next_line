@@ -149,11 +149,11 @@ char *get_next_line(int fd)
 		return (str);
 	}
 	b.str = ft_strchr_l(buf);
-	// if (buf)
-	// {
-	// 	free(buf);
-	// 	buf = NULL;
-	// }
+	if (buf)
+	{
+		free(buf);
+		buf = NULL;
+	}
 	//printf("b.str ft_strchr = %s \n",b.str);
 	return (str);
 }
