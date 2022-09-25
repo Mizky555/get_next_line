@@ -33,15 +33,19 @@ int   ft_strlen(const char *s)
 char	*ft_strchr_l(const char *s)
 {
 	int	i;
+	char *str;
 
 	i = 0;
+	str = NULL;
 	if (s && s[i])
 	{
 		while (i <= ft_strlen(s))
 		{
 			if (s[i] == '\n')
 			{
-				return ((char *)&s[i + 1]);
+				str = ft_strjoin(str, s + i + 1, ft_strlen(s + i + 1));
+				//return ((char *)&s[i + 1]);
+				return (str);
 			}
 			i++;
 		}
