@@ -167,7 +167,7 @@ int main(int argc, char **argv)
 
 	(void) argc;
 	str = NULL;
-	fd = open(argv, O_RDONLY);
+	fd = open(argv[1], O_RDONLY);
 
 	str = get_next_line(fd);
 	printf("get_next_line = %s\n",str);
