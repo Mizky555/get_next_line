@@ -59,19 +59,15 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2,int i, int j)
 	int	len;
 
 	len = 0;
-	str = NULL;
+	
 	if (!s1 && !s2)
 		return (NULL);
 	if (s1 == NULL)
 		len = len_s2;
 	else
 		len = ft_strlen(s1) + len_s2;
-	str = malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	ft_memset(str, 0, len + 1);
-
-	str = wai_koi_kid(s1, s2, len_s2);
+	
+	str = wai_koi_kid(s1, s2, len_s2,len);
 
 
 	if (s1)
@@ -79,10 +75,18 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2,int i, int j)
 	return (str);
 }
 
-char	*wai_koi_kid(char *s1, char *s2, int len_s2)
+char	*wai_koi_kid(char *s1, char *s2, int len_s2, int len)
 {
 	int i = 0;
 	int j =  0;
+	char	*str;
+
+	str = NULL;
+	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	ft_memset(str, 0, len + 1);
+
 	while (s1 != NULL && s1[i] != '\0')
 	{
 		str[i] = s1[i];
