@@ -15,7 +15,7 @@ char	*ft_strchr_l(char *s, int i)
 		{
 			if (s[i] == '\n')
 			{
-				str = ft_strjoin(str, &s[i + 1], ft_strlen(&s[i + 1]));
+				str = ft_strjoin(str, &s[i + 1], ft_strlen(&s[i + 1]),0,0);
 				if (!str[0])
 				{
 					free(str);
