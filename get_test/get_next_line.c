@@ -74,10 +74,9 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 	if (str == NULL)
 		return (NULL);
 	ft_memset(str, 0, len + 1);
-	while (s1 != NULL && s1[i] != '\0')
+	while (s1 != NULL && s1[i++] != '\0')
 	{
 		str[i] = s1[i];
-		i++;
 	}
 	while (s2 != NULL && j < len_s2)
 		str[i++] = s2[j++];
