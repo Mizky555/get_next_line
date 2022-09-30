@@ -55,25 +55,4 @@ char	*ft_strchr_l(char *s)
 	if (s)
 		free(s);
 	return (NULL);
-}//27
-
-int	len_newline(char *buf,int len_buf, int mode)
-{
-    int i;
-
-    i = 0;
-	if (buf)
-	{
-		while(i <= len_buf)
-		{
-			if (buf[i] == '\n')
-				return (i + 1);
-			i++;
-		}
-		if (mode == 1)
-			return (len_buf);
-		else if (mode == 2)
-			return (0);
-	}
-	return (0);
 }
