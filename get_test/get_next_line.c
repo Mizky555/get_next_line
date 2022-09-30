@@ -70,15 +70,27 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2,int i, int j)
 	if (str == NULL)
 		return (NULL);
 	ft_memset(str, 0, len + 1);
+
+	str = wai_koi_kid(s1, s2, len_s2);
+
+
+	if (s1)
+		free(s1);
+	return (str);
+}
+
+char	*wai_koi_kid(char *s1, char *s2, int len_s2)
+{
+	int i = 0;
+	int j =  0;
 	while (s1 != NULL && s1[i] != '\0')
 	{
-		str[i] = s1[i++];
+		str[i] = s1[i];
+		i++;
 	}
 	while (s2 != NULL && j < len_s2)
 		str[i++] = s2[j++];
 	str[i] = '\0';
-	if (s1)
-		free(s1);
 	return (str);
 }
 
