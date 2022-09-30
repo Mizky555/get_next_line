@@ -106,14 +106,14 @@ char *get_next_line(int fd)
 		if (len_buf == 0)
 			break;
 		buf[len_buf] = 0;
-		str = ft_strjoin(str,buf,len_newline(buf, len_buf,1,0,0));
+		str = ft_strjoin(str,buf,len_newline(buf, len_buf,1),0,0);
 		if (len_newline(buf, len_buf, 2) != 0)
 			break;
 	}
 
 	if (str == NULL) 
 	{
-		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str), 1, 0, 0));
+		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str), 1),0,0);
 		b.str = ft_strchr_l(b.str, 0);
 		if (buf)
 		{
