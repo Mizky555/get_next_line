@@ -24,6 +24,6 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2,int i, int j);
 char *get_next_line(int fd);
 void	*ft_memset(void *b, int c, size_t len);
 int   ft_strlen(char *s);
-
+char	*wai_koi_kid(char *s1, char *s2, int len_s2, int len);
 
 #endif
