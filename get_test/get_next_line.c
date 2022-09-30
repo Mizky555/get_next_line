@@ -53,15 +53,11 @@ int	len_newline(char *buf,int len_buf, int mode){
 	return (0);
 }
 
-char	*ft_strjoin(char *s1, char *s2, int len_s2)
+char	*ft_strjoin(char *s1, char *s2, int len_s2,int i, int j)
 {
 	char	*str;
-	int	i;
-	int		j;
 	int	len;
 
-	i = 0;
-	j = 0;
 	len = 0;
 	str = NULL;
 	if (!s1 && !s2)
@@ -74,9 +70,10 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 	if (str == NULL)
 		return (NULL);
 	ft_memset(str, 0, len + 1);
-	while (s1 != NULL && s1[i++] != '\0')
+	while (s1 != NULL && s1[i] != '\0')
 	{
 		str[i] = s1[i];
+		i++;
 	}
 	while (s2 != NULL && j < len_s2)
 		str[i++] = s2[j++];
@@ -109,14 +106,14 @@ char *get_next_line(int fd)
 		if (len_buf == 0)
 			break;
 		buf[len_buf] = 0;
-		str = ft_strjoin(str,buf,len_newline(buf, len_buf,1));
+		str = ft_strjoin(str,buf,len_newline(buf, len_buf,1,0,0));
 		if (len_newline(buf, len_buf, 2) != 0)
 			break;
 	}
 
 	if (str == NULL) 
 	{
-		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str),1));
+		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str), 1, 0, 0));
 		b.str = ft_strchr_l(b.str, 0);
 		if (buf)
 		{
@@ -128,4 +125,5 @@ char *get_next_line(int fd)
 	b.str = ft_strchr_l(buf, 0);
 	return (str);
 }
+
 
