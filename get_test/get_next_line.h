@@ -25,5 +25,6 @@ char *get_next_line(int fd);
 void	*ft_memset(void *b, int c, size_t len);
 int   ft_strlen(char *s);
 char	*wai_koi_kid(char *s1, char *s2, int len_s2, int len);
+char	*wai_koi_kid_2(int fd, char *buf);
 
 #endif
