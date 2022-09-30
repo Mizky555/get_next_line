@@ -4,12 +4,10 @@
 #include <stdlib.h>
 #include "get_next_line.h"
 
-char	*ft_strchr_l(char *s)
+char	*ft_strchr_l(char *s, int i)
 {
-	int	i;
 	char *str;
 
-	i = 0;
 	str = NULL;
 	if (s && s[i])
 	{
@@ -120,7 +118,7 @@ char *get_next_line(int fd)
 	if (str == NULL) 
 	{
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str),1));
-		b.str = ft_strchr_l(b.str);
+		b.str = ft_strchr_l(b.str, 0);
 		if (buf)
 		{
 			free(buf);
@@ -128,7 +126,7 @@ char *get_next_line(int fd)
 		}
 		return (str);
 	}
-	b.str = ft_strchr_l(buf);
+	b.str = ft_strchr_l(buf, 0);
 	return (str);
 }
 
