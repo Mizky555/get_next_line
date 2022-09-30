@@ -53,7 +53,7 @@ int	len_newline(char *buf,int len_buf, int mode){
 	return (0);
 }
 
-char	*ft_strjoin(char *s1, char *s2, int len_s2,int i, int j)
+char	*ft_strjoin(char *s1, char *s2, int len_s2)
 {
 	char	*str;
 	int	len;
