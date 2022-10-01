@@ -39,7 +39,7 @@ int	len_newline(char *buf,int len_buf, int mode){
     i = 0;
 	if (buf)
 	{
-		while(i < len_buf)
+		while(i <= len_buf)
 		{
 			if (buf[i] == '\n')
 				return (i + 1);
@@ -140,11 +140,12 @@ char	*wai_koi_kid_2(int fd, char *buf)
 	str = NULL;
 	ft_memset(buf, 0, BUFFER_SIZE + 1);
 	printf("len_newline = %d\n",len_newline(b.str,ft_strlen(b.str),1));
-	
+	printf("ft_strlen = %d\n",ft_strlen(b.str));
 	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str)){
 		str = b.str;
-		printf("ft_strlen = %d\n",ft_strlen(b.str));
+		
 	}
+
 	printf("str3 = %s\n",str);
 	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str))
 	{
