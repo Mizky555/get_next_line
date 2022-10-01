@@ -133,6 +133,7 @@ char	*wai_koi_kid_2(int fd, char *buf)
 	static t_box b;
 	int len_buf;
 	
+	str = NULL;
 	ft_memset(buf, 0, BUFFER_SIZE + 1);
 	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str))
 		str = b.str;
