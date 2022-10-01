@@ -141,6 +141,7 @@ char	*wai_koi_kid_2(int fd, char *buf)
 	ft_memset(buf, 0, BUFFER_SIZE + 1);
 	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str))
 		str = b.str;
+	printf("str3 = %s\n",str);
 	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str))
 	{
 		
