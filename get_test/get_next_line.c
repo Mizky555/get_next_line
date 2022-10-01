@@ -111,13 +111,13 @@ char *get_next_line(int fd)
     buf = (char *) malloc(sizeof(char) * (BUFFER_SIZE + 1));
     if (buf == NULL)
 		return (NULL);
+	printf("str1 = %s\n",str);
 	str = wai_koi_kid_2(fd ,buf);
+	printf("str2 = %s\n",str);
 	if (str == NULL) 
 	{
-		printf("str = %s\n",str);
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str), 1));
 		b.str = ft_strchr_l(b.str, 0);
-		printf("b.str = %s\n",b.str);
 		if (buf)
 		{
 			free(buf);
@@ -125,7 +125,9 @@ char *get_next_line(int fd)
 		}
 		return (str);
 	}
+	printf("b.str1 = %s\n",b.str);
 	b.str = ft_strchr_l(buf, 0);
+	printf("b.str2 = %s\n",b.str);
 	return (str);
 }
 
