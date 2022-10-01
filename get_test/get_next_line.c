@@ -116,6 +116,7 @@ char *get_next_line(int fd)
 	{
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str), 1));
 		b.str = ft_strchr_l(b.str, 0);
+		printf("b.str = %s\n",b.str);
 		if (buf)
 		{
 			free(buf);
@@ -139,6 +140,7 @@ char	*wai_koi_kid_2(int fd, char *buf)
 		str = b.str;
 	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str))
 	{
+		
 		len_buf = read(fd, buf, BUFFER_SIZE);
 		if (len_buf == 0)
 			break;
