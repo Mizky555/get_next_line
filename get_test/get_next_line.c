@@ -67,7 +67,7 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 	else
 		len = ft_strlen(s1) + len_s2;
 	
-	str = wai_koi_kid(s1, s2, len_s2,len);
+	str = ft_strjoin_2(s1, s2, len_s2,len);
 
 
 	if (s1)
@@ -111,7 +111,7 @@ char *get_next_line(int fd)
     buf = (char *) malloc(sizeof(char) * (BUFFER_SIZE + 1));
     if (buf == NULL)
 		return (NULL);
-	str = wai_koi_kid_2(fd ,buf , &b);
+	str = get_next_line_2(fd ,buf , &b);
 	if (str == NULL) 
 	{
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str), 1));
