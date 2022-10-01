@@ -39,7 +39,7 @@ int	len_newline(char *buf,int len_buf, int mode){
     i = 0;
 	if (buf)
 	{
-		while(i <= len_buf)
+		while(i < len_buf)
 		{
 			if (buf[i] == '\n')
 				return (i + 1);
