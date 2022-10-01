@@ -13,7 +13,7 @@ char	*ft_strchr_l(char *s, int i)
 	{
 		while (i < ft_strlen(s))
 		{
-			if (s[i] == '\n')
+			if (s[i] == '\n' && (i + 1) < ft_strlen(s))
 			{
 				str = ft_strjoin(str, &s[i + 1], ft_strlen(&s[i + 1]));
 				if (!str[0])
