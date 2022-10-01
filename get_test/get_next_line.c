@@ -112,7 +112,7 @@ char *get_next_line(int fd)
     if (buf == NULL)
 		return (NULL);
 	printf("str1 = %s\n",str);
-	str = wai_koi_kid_2(fd ,buf);
+	str = wai_koi_kid_2(fd ,buf , &b);
 	printf("str2 = %s\n",str);
 	if (str == NULL) 
 	{
@@ -131,23 +131,19 @@ char *get_next_line(int fd)
 	return (str);
 }
 
-char	*wai_koi_kid_2(int fd, char *buf)
+char	*wai_koi_kid_2(int fd, char *buf, t_box *b)
 {
 	char *str;
-	static t_box b;
 	int len_buf;
 	
 	str = NULL;
 	ft_memset(buf, 0, BUFFER_SIZE + 1);
-	printf("len_newline = %d\n",len_newline(b.str,ft_strlen(b.str),1));
-	printf("ft_strlen = %d\n",ft_strlen(b.str));
-	if (b.str != NULL && len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str)){
-		str = b.str;
-		
-	}
-
+	printf("len_newline = %d\n",len_newline(b->str,ft_strlen(b->str),1));
+	printf("ft_strlen = %d\n",ft_strlen(b->str));
+	if (b->str != NULL && len_newline(b->str,ft_strlen(b->str),1) == ft_strlen(b->str))
+		str = b->str;
 	printf("str3 = %s\n",str);
-	while (b.str == NULL || len_newline(b.str,ft_strlen(b.str),1) == ft_strlen(b.str))
+	while (b->str == NULL || len_newline(b->str,ft_strlen(b->str),1) == ft_strlen(b->str))
 	{
 		
 		len_buf = read(fd, buf, BUFFER_SIZE);
