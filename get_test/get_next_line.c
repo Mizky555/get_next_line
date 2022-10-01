@@ -114,6 +114,7 @@ char *get_next_line(int fd)
 	str = wai_koi_kid_2(fd ,buf);
 	if (str == NULL) 
 	{
+		printf("str = %s\n",str);
 		str = ft_strjoin(str,b.str,len_newline(b.str, ft_strlen(b.str), 1));
 		b.str = ft_strchr_l(b.str, 0);
 		printf("b.str = %s\n",b.str);
