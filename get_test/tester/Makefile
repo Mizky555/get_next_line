@@ -33,9 +33,9 @@ CFLAGS					= -g3 -Wall -Wextra -Werror
 CPPFLAGS				= -g3 -ldl -std=c++11 -I utils/ -I.. -Wno-everything
 
 UNAME = $(shell uname -s)
-ifeq ($(UNAME), Linux)
+#ifeq ($(UNAME), Linux)
     VALGRIND = valgrind -q --leak-check=full
-endif
+#endif
 
 $(1MANDATORY): 1%:
 	@gcc -D BUFFER_SIZE=1 $(CFLAGS) -c $(MANDATORY_FILES)

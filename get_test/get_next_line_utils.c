@@ -1,7 +1,15 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsirirak <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/03 02:31:56 by tsirirak          #+#    #+#             */
+/*   Updated: 2022/10/03 02:48:09 by tsirirak         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 void	*ft_memset(void *b, int c, size_t len)
@@ -17,11 +25,11 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-int   ft_strlen(char *s)
+int	ft_strlen(char *s)
 {
-    int    i;
+	int	i;
 
-    i = 0;
+	i = 0;
 	if (s)
 	{
 		while (s[i] != '\0')

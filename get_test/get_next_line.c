@@ -6,14 +6,10 @@
 /*   By: tsirirak <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 00:54:50 by tsirirak          #+#    #+#             */
-/*   Updated: 2022/10/03 01:28:11 by tsirirak         ###   ########.fr       */
+/*   Updated: 2022/10/03 02:47:30 by tsirirak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
 #include "get_next_line.h"
 
 char	*ft_strjoin(char *s1, char *s2, int len_s2)
@@ -36,8 +32,8 @@ char	*ft_strjoin(char *s1, char *s2, int len_s2)
 
 char	*ft_strjoin_2(char *s1, char *s2, int len_s2, int len)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*str;
 
 	i = 0;
@@ -60,8 +56,8 @@ char	*ft_strjoin_2(char *s1, char *s2, int len_s2, int len)
 
 char	*get_next_line(int fd)
 {
-	char	*buf;
-	char	*str;
+	char			*buf;
+	char			*str;
 	static t_box	b;
 
 	buf = NULL;
@@ -90,9 +86,9 @@ char	*get_next_line(int fd)
 char	*get_next_line_2(int fd, char *buf, t_box *b)
 {
 	char	*str;
-	int	len_buf;
-	int	b_len;
-	int	len_nl;
+	int		len_buf;
+	int		b_len;
+	int		len_nl;
 
 	str = NULL;
 	b_len = ft_strlen(b->str);
@@ -104,11 +100,11 @@ char	*get_next_line_2(int fd, char *buf, t_box *b)
 	{
 		len_buf = read(fd, buf, BUFFER_SIZE);
 		if (len_buf == 0)
-			break;
+			break ;
 		buf[len_buf] = 0;
 		str = ft_strjoin(str, buf, len_newline(buf, len_buf, 1));
 		if (len_newline(buf, len_buf, 2) != 0)
-			break;
+			break ;
 	}
 	return (str);
 }
