@@ -131,12 +131,16 @@ char	*get_next_line_2(int fd, char *buf, t_box *b)
 {
 	char *str;
 	int len_buf;
+	int	b_len;
+	int	len_nl;
 	
 	str = NULL;
+	b_len = ft_strlen(b->str);
+	len_nl = len_newline(b->str, b_len, 1);
 	ft_memset(buf, 0, BUFFER_SIZE + 1);
-	if (b->str != NULL && len_newline(b->str,ft_strlen(b->str),1) == ft_strlen(b->str))
+	if (b->str != NULL && len_nl == b_len)
 		str = b->str;
-	while (b->str == NULL || len_newline(b->str,ft_strlen(b->str),1) == ft_strlen(b->str))
+	while (b->str == NULL || (b->str && len_nl == b_len))
 	{
 		len_buf = read(fd, buf, BUFFER_SIZE);
 		if (len_buf == 0)
