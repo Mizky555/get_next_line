@@ -108,3 +108,8 @@ char	*get_next_line_2(int fd, char *buf, t_box *b)
 	}
 	return (str);
 }
+
+/*
+open_max คือ จำนวนไฟล์ที่ระบบปฎิบัติการอนุญาติให้เปิดได้มากที่สุด
+
+*/
